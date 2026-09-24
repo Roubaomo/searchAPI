@@ -1,14 +1,10 @@
 {
+  "$schema": "https://openapi.vercel.sh/vercel.json",
   "buildCommand": "pip install --prefer-binary -r requirements.txt",
   "installCommand": "pip install --prefer-binary -r requirements.txt",
-  "env": {
-    "PYTHON_VERSION": "3.11",
-    "UV_LINK_MODE": "copy"
-  },
-  "rewrites": [
-    {
-      "source": "/(.*)",
-      "destination": "/api/index.py"
+  "functions": {
+    "api/index.py": {
+      "maxDuration": 60
     }
-  ]
+  }
 }
